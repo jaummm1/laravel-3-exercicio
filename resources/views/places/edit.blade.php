@@ -19,7 +19,7 @@
         <button type="submit">Enviar</button>
     </form>
 
-    <form action="/places/delete/{{ $place->id }}" method="post">
+    <form action="/places/delete/{{ $place->id }}" method="get">
         @csrf
         <button type="submit">Deletar</button>
     </form>

@@ -24,4 +24,4 @@ Route::post('/places/store', [PlaceController::class, 'store']);
 Route::get('/places/show/{place}', [PlaceController::class, 'show']);
 Route::get('/places/edit/{place}', [PlaceController::class, 'edit']);
 Route::post('/places/update/{place}', [PlaceController::class, 'update']);
-Route::post('/places/delete/{place}', [PlaceController::class, 'destroy']);
+Route::get('/places/delete/{place}', [PlaceController::class, 'destroy']);
