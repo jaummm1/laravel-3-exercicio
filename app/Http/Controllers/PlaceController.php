@@ -3,22 +3,44 @@
 namespace App\Http\Controllers;
 
 use App\Models\Place;
+use App\Models\Nome;
 use Illuminate\Http\Request;
 
 class PlaceController extends Controller
 {
+
+    public function hello($nome)
+    {
+        $result = $nome;
+        return view('hello', compact('nome'));
+    }
+
+    public function dbz($energy)
+    {
+        $result = $energy;
+        return view('dbz', compact('energy'));
+    }
+
+    public function clients()
+    {
+        $names = Nome::all();
+        
+
+        return view('clients', compact('names'));
+
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $places = Place::all();
-        
-
-        return view('places.index', compact('places'));
-    }
+     public function index()
+     {
+         $places = Place::all();
+         return view('places.index', compact('places'));
+     }
 
     /**
      * Show the form for creating a new resource.

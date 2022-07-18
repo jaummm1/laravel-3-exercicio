@@ -25,3 +25,57 @@
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public function store(Request $request)
+{
+    $user = auth()->user();
+
+    $attributes = $request->only([
+        'title',
+        'value',
+        'due_date'
+    ]);
+
+    $attributes['user_id'] = $user->id;
+
+    Expense::create($attributes);
+
+
+
+public function pay(Expense $expense)
+{
+    $user = auth()->user();
+
+    if ($expense->user_id !== $user->id) {
+        abort(404);
+    }
+
+    $expense->update(['paid' => 1]);
+
+    return redirect('/dashboard')->with('success', 'Despesa paga com sucesso');
+}
