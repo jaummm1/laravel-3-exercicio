@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 class PlaceController extends Controller
 {
 
-    public function hello($nome)
+    public function hello($name)
     {
-        $result = $nome;
-        return view('hello', compact('nome'));
+        $result = $name;
+        return view('hello', compact('name'));
     }
 
     public function dbz($energy)

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/hello/{nome}', [PlaceController::class, 'hello']);    
+Route::get('/hello/{name}', [PlaceController::class, 'hello']);    
 Route::get('/dbz/{energy}', [PlaceController::class, 'dbz']);  
 Route::get('/clients/{names}', [PlaceController::class, 'clients']);  
 
